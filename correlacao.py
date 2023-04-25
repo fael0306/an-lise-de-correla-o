@@ -7,8 +7,6 @@ import statistics as lr
 
 casas = pd.read_csv("C:\\Users\\f0fp1107\\Documents\\casas.csv")
 
-#print(casas.count())
-
 # Zerando os valores nulos
 casas = casas.fillna(0)
 
