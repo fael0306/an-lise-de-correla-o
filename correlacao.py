@@ -13,7 +13,7 @@ casas = pd.read_csv("C:\\Users\\f0fp1107\\Documents\\casas.csv")
 casas = casas.fillna(0)
 
 # Escolhendo casas aleatórias por amostragem aleatória simples de 1% dos dados
-casas = casas.sample(n=int(len(casas)*0.01),replace=False,random_state=1)
+casas = casas.sample(n=int(round(len(casas)*0.01)),replace=False,random_state=1)
 
 # Verificando correlação
 # 0.9 para mais ou para menos indica uma correlação muito forte.
