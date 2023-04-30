@@ -13,14 +13,14 @@ casas = casas.fillna(0)
 # Escolhendo casas aleatórias por amostragem aleatória simples de 1% dos dados
 casas = casas.sample(n=int(round(len(casas)*0.01)),replace=False,random_state=1)
 
-# Verificando correlação
+# Verificando mapa de correlações
 # 0.9 para mais ou para menos indica uma correlação muito forte.
 # 0.7 a 0.9 positivo ou negativo indica uma correlação forte.
 # 0.5 a 0.7 positivo ou negativo indica uma correlação moderada.
 # 0.3 a 0.5 positivo ou negativo indica uma correlação fraca.
 # 0 a 0.3 positivo ou negativo indica uma correlação desprezível.
-cc = lr.correlation(casas['m2'],casas['price'])
-print(cc)
+sns.heatmap(casas.corr(), annot=True)
+plt.show()
 
 # Achando coeficientes da regressão linear
 a1,a2=lr.linear_regression(casas['m2'],casas['price'])
